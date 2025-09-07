@@ -38,7 +38,7 @@
         <div class="todo-list">
             <% todos.forEach((todo , index) => { %>
                 <div class="todo-item">
-                    <form action="/edit" method="post" class="form-class">
+                    <form action="/todos/<%= index %>?_method=PUT" method="post" class="form-class">
                         <input type="hidden" name="index" value="<%= index %>" />
                         <input type="text" name="updatetext" value="<%= todo.task %>"/>
                         <select name="updatepriority">
@@ -48,7 +48,7 @@
                         </select>
                         <button type="submit" id="edit-btn"> Edit</button>
                     </form>
-                    <form action="/delete" method="post" class="form-class">
+                    <form action="/todos/<%= index %>?_method=DELETE" method="post" class="form-class">
                         <input type="hidden"  name = "index" value="<%= index %>" />
                         <button type="submit" id="delete-btn">Delete</button>
                     </form>

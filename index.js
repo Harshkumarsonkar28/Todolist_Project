@@ -1,8 +1,10 @@
 const express = require('express');
 const bodyparser = require('body-parser');
+const methodOverride = require('method-override');
 const app = express();
 
 app.use(express.urlencoded({ extended:true }));
+app.use(methodOverride('_method'));
 app.set("view engine", "ejs");
 app.use(express.static("public"))
 
@@ -34,8 +36,8 @@ app.post('/add',function(req,res){
 })
 // edit
 
-app.post("/edit",function(req,res){
-    let index = req.body.index;
+app.put("/todos/:index",function(req,res){
+    let index = req.params.index;
     let updatetext = req.body.updatetext.trim();
     let updatepriority = req.body.updatepriority;
 
@@ -48,12 +50,12 @@ app.post("/edit",function(req,res){
 
 // delete
 
-app.post("/delete",function(req,res){
-    let index = req.body.index;
+app.delete("/todos/:index",function(req,res){
+    let index = req.params.index;
     todos.splice(index,1);
     res.redirect("/");
 })
 
 app.listen(3000,function(){
-    console.log('server start');
+    console.log(`Server is running on http://localhost:3000`);
 })

@@ -1,21 +1,20 @@
 # Todolist Project
 
-A clean and user-friendly simple Todo application built with **Node.js**, **Express**, and **EJS**, allowing you to manage tasks by priority.
+A clean and user-friendly Todo application built with **Node.js**, **Express**, and **EJS**, allowing you to manage tasks by priority.
 
 ---
 
 ## 🚀 Live Demo
-[Click here to view the app](https://prioritask-project.onrender.com/)
+[View the App on Render](https://prioritask-project.onrender.com/)
 
 ---
 
 ## 📌 Features
-- Add tasks with different priority levels (High,Medium,Low)
-- Search tasks based on priority
+- Add tasks with priority levels (**High**, **Medium**, **Low**)
+- Filter tasks based on priority
 - Edit and delete tasks easily
 - Responsive and clean design
 - Automatic deployment on Render
-
 
 ---
 
@@ -24,11 +23,11 @@ A clean and user-friendly simple Todo application built with **Node.js**, **Expr
 - **Frontend:** EJS, CSS
 - **Hosting:** Render
 
-
 ---
 
 ## 📥 Installation & Setup
 
+```bash
 # Clone the repository
 git clone https://github.com/Harshkumarsonkar28/Todolist_Project.git
 
@@ -37,6 +36,7 @@ cd Todolist_Project
 
 # Install dependencies
 npm install
+npm install express ejs body-parser method-override
 
 # Run the app
 node index.js
